@@ -17,4 +17,5 @@ $router->get('/spellcheck/{lang}/{word}', 'WordController@SpellChecker');
 
 $router->group(['prefix' => 'admin'], function () use ($router) {
     $router->post('add', 'AdminController@AddSpellCheckerWord');
+    $router->post('remove', 'AdminController@RemoveSpellCheckerWord');
 });
