@@ -26,7 +26,7 @@ class WordController extends Controller
         if(empty($select)){
             return response()->json(["correct" => false], 404);
         } else {
-            return response()->json(["correct" => true], 200);
+            return response()->json(["correct" => true, "lang" => $select[0]->lang], 200);
         }
     }
 }

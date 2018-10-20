@@ -15,7 +15,7 @@ $router->get('/translate/{lang_from}/{lang_to}/{word}', 'WordController@Translat
 
 $router->get('/spellcheck/{lang}/{word}', 'WordController@SpellChecker');
 
-$router->group(['prefix' => 'admin'], function () use ($router) {
+$router->group(['prefix' => 'admin', 'middleware' => 'admin'], function () use ($router) {
     $router->post('add', 'AdminController@AddSpellCheckerWord');
     $router->post('remove', 'AdminController@RemoveSpellCheckerWord');
 });
